@@ -36,6 +36,11 @@
           <button class="theme-toggle" id="themeToggle" type="button">
             <span id="themeIcon">☾</span>
           </button>
+          <button class="cart-btn" id="cartBtn" type="button" aria-label="View Cart">
+            <span class="cart-icon">🛒</span>
+            <span class="cart-text">Cart</span>
+            <span class="cart-badge" id="cartBadge">0</span>
+          </button>
           <a class="btn btn-primary" href="contact.html">Order Enquiry</a>
         </div>
       </nav>
@@ -177,6 +182,9 @@
                 $14.99
               </strong>
             </div>
+            <button class="btn btn-primary" id="addCustomBowlBtn" type="button" style="width:100%; margin-top:16px; font-size:15px;">
+              🛒 Add Custom Bowl to Cart
+            </button>
           </div>
           <div class="builder-card bowl-preview reveal">
             <div class="bowl-preview-content">
@@ -233,9 +241,9 @@
             </div>
           </article>
           <article class="food-card reveal image-hover">
-            <img class="food-image" src="assets/images/food-lime-chicken.jpg" alt="Grilled chicken with vegetables" loading="lazy">
+            <img class="food-image" src="assets/images/food-lime-chicken.jpg" alt="Grilled lime chicken" loading="lazy">
             <div class="food-body">
-              <span class="tag">Protein packed</span>
+              <span class="tag">Warm protein</span>
               <h3>Lime Chicken</h3>
               <p class="muted">
                 Tender grilled chicken finished with fresh lime,
@@ -349,7 +357,7 @@
               </p>
               <div class="signature-footer">
                 <span class="signature-cal">520 kcal • High Protein</span>
-                <a href="menu.html" class="btn btn-outline" style="min-width:auto; height:38px; padding:0 14px; font-size:12px;">Order Now</a>
+                <button type="button" class="btn btn-primary btn-add-cart" data-name="Truffle Salmon Bowl" data-price="16.49" data-img="assets/images/signature-salmon.jpg" style="min-width:auto; height:38px; padding:0 14px; font-size:12px;">+ Add to Cart</button>
               </div>
             </div>
           </article>
@@ -369,7 +377,7 @@
               </p>
               <div class="signature-footer">
                 <span class="signature-cal">580 kcal • Spicy</span>
-                <a href="menu.html" class="btn btn-outline" style="min-width:auto; height:38px; padding:0 14px; font-size:12px;">Order Now</a>
+                <button type="button" class="btn btn-primary btn-add-cart" data-name="Spicy Ahi Fusion" data-price="17.29" data-img="assets/images/signature-tuna.jpg" style="min-width:auto; height:38px; padding:0 14px; font-size:12px;">+ Add to Cart</button>
               </div>
             </div>
           </article>
@@ -389,7 +397,7 @@
               </p>
               <div class="signature-footer">
                 <span class="signature-cal">440 kcal • Plant Based</span>
-                <a href="menu.html" class="btn btn-outline" style="min-width:auto; height:38px; padding:0 14px; font-size:12px;">Order Now</a>
+                <button type="button" class="btn btn-primary btn-add-cart" data-name="Green Goddess Bowl" data-price="13.99" data-img="assets/images/signature-goddess.jpg" style="min-width:auto; height:38px; padding:0 14px; font-size:12px;">+ Add to Cart</button>
               </div>
             </div>
           </article>
@@ -445,31 +453,34 @@
         </div>
       </div>
     </section>
+    <!-- NEWSLETTER SECTION -->
+    <section class="section newsletter-section">
+      <div class="container">
+        <div class="footer-newsletter reveal">
+          <div class="footer-news-copy">
+            <span class="eyebrow" style="color:#ffe28a;">Join the Bloom Club</span>
+            <h3>Get 15% off your first fresh bowl.</h3>
+            <p>Subscribe for seasonal ingredient updates, secret recipes & store offers.</p>
+          </div>
+          <form class="footer-news-form" id="newsletterForm" onsubmit="event.preventDefault(); this.querySelector('.news-thanks').style.display='block'; this.reset();">
+            <div class="news-input-wrap">
+              <input type="email" placeholder="Enter your email address..." required aria-label="Email address">
+              <button type="submit" class="btn btn-primary">Subscribe →</button>
+            </div>
+            <div class="news-thanks" style="display:none; margin-top:8px; font-size:12px; color:#f7c948; font-weight:800;">
+              ✨ Welcome to the Bloom Club! Check your inbox for your 15% off code.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
 
-    <!-- =========================================================
+  <!-- =========================================================
   FOOTER
   ========================================================= -->
   <footer class="site-footer">
     <div class="container">
-      <!-- FOOTER NEWSLETTER BANNER -->
-      <div class="footer-newsletter reveal">
-        <div class="footer-news-copy">
-          <span class="eyebrow" style="color:#ffe28a;">Join the Bloom Club</span>
-          <h3>Get 15% off your first fresh bowl.</h3>
-          <p>Subscribe for seasonal ingredient updates, secret recipes & store offers.</p>
-        </div>
-        <form class="footer-news-form" id="newsletterForm" onsubmit="event.preventDefault(); this.querySelector('.news-thanks').style.display='block'; this.reset();">
-          <div class="news-input-wrap">
-            <input type="email" placeholder="Enter your email address..." required aria-label="Email address">
-            <button type="submit" class="btn btn-primary">Subscribe →</button>
-          </div>
-          <div class="news-thanks" style="display:none; margin-top:8px; font-size:12px; color:#f7c948; font-weight:800;">
-            ✨ Welcome to the Bloom Club! Check your inbox for your 15% off code.
-          </div>
-        </form>
-      </div>
-
       <!-- MAIN FOOTER GRID -->
       <div class="footer-grid">
         <!-- BRAND COLUMN -->
